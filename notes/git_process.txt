@@ -1,0 +1,36 @@
+Update python:
+
+pyenv update
+
+pip install poetry
+
+poetry --version
+
+poetry init
+
+c:\Python\Poetry\venv\atlas-Jt9OlLnC-py3.12\Scripts\activate
+
+cmd.exe "/k .\env\Scripts\activate"
+
+
+Clone Your Forked Repository:
+
+Open PyCharm and select Get from VCS on the welcome screen, or if you have a project open, go to File -> New -> Project from Version Control.
+In the URL field, enter the URL of your forked repository (you can get this URL from your repository page on GitHub).
+Specify the local directory where you want to clone the repository and click Clone.
+
+Open the Cloned Repository as a Project:
+
+After cloning, PyCharm will ask if you want to open the directory as a project. Confirm this to proceed.
+
+git remote add upstream https://github.com/VILA-Lab/ATLAS.git
+
+
+
+git fetch upstream
+
+git branch -a
+
+git checkout main
+
+git merge upstream/main
