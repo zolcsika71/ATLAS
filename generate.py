@@ -20,9 +20,14 @@ def generate_answers(questions, gpt_model=DEFAULT_GPT_MODEL):
     """
     Generate answers for a given set of questions
     """
-    answers = [client.chat.completions.create(messages=[{"role": "user", "content": question}], model=gpt_model).choices[0].message.content
-               for question in questions]
-    return answers
+    return [
+        client.chat.completions.create(
+            messages=[{"role": "user", "content": question}], model=gpt_model
+        )
+        .choices[0]
+        .message.content
+        for question in questions
+    ]
 
 
 def extract_questions_from_file(file_path):
@@ -31,8 +36,7 @@ def extract_questions_from_file(file_path):
     """
     with open(file_path) as file:
         lines = file.readlines()
-    questions = [line for line in lines if line.strip().lower().startswith("question")]
-    return questions
+    return [line for line in lines if line.strip().lower().startswith("question")]
 
 
 def save_results_to_file(principle_id, question_answer_pairs):
